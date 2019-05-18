@@ -1,0 +1,22 @@
+{
+  "name": "p1epoker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.8",
+    "angular-messages": "^1.7.8",
+    "angular-smart-table": "^2.1.11",
+    "angular-ui-router": "^1.0.22",
+    "bootstrap": "^4.3.1",
+    "express": "^4.17.0",
+    "jquery": "^3.4.1",
+    "ngstorage": "^0.3.11",
+    "popper.js": "^1.15.0"
+  }
+}

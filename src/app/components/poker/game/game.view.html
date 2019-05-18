@@ -1,0 +1,369 @@
+<div class="poker-table">
+  <div class="vertical-center">
+    <div class="container">
+      <!-- Heads Up -->
+      <span ng-if="vm.game.seats.length==2">
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[0] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-4 well">
+            <pokertable>{{ vm.game.table }}</pokertable>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[1] }}</player>
+          </div>
+        </div>
+      </span>
+      <!-- 3 Max -->
+      <span ng-if="vm.game.seats.length==3">
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[0] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[1] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-4 well">
+            <pokertable>{{ vm.game.table }}</pokertable>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[2] }}</player>
+          </div>
+        </div>
+      </span>
+      <!-- 4 Max -->
+      <span ng-if="vm.game.seats.length==4">
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[0] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[1] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-4 well">
+            <pokertable>{{ vm.game.table }}</pokertable>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[2] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[3] }}</player>
+          </div>
+        </div>
+      </span>
+      <!-- 5 Max -->
+      <span ng-if="vm.game.seats.length==5">
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[0] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[1] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[2] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-4 well">
+            <pokertable>{{ vm.game.table }}</pokertable>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[3] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[4] }}</player>
+          </div>
+        </div>
+      </span>
+      <!-- 6 Max -->
+      <span ng-if="vm.game.seats.length==6">
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[0] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[1] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[2] }}</player>
+          </div>
+          <div class="col-4 offset-1 well">
+            <pokertable>{{ vm.game.table }}</pokertable>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[3] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[4] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[5] }}</player>
+          </div>
+        </div>
+      </span>
+      <!-- 7 Max -->
+      <span ng-if="vm.game.seats.length==7">
+        <div class="row center-row">
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[0] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[1] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[2] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[3] }}</player>
+          </div>
+          <div class="col-4 offset-1 well">
+            <pokertable>{{ vm.game.table }}</pokertable>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[4] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[5] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[6] }}</player>
+          </div>
+        </div>
+      </span>
+      <!-- 8 Max -->
+      <span ng-if="vm.game.seats.length==8">
+        <div class="row center-row">
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[0] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[1] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[2] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[3] }}</player>
+          </div>
+          <div class="col-4 offset-1 well">
+            <pokertable>{{ vm.game.table }}</pokertable>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[4] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[5] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[6] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[7] }}</player>
+          </div>
+        </div>
+      </span>
+      <!-- 9 Max -->
+      <span ng-if="vm.game.seats.length==9">
+        <div class="row center-row">
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[0] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[1] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[2] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[3] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[4] }}</player>
+          </div>
+          <div class="col-4 offset-1 well">
+            <pokertable>{{ vm.game.table }}</pokertable>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[5] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[6] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[7] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[8] }}</player>
+          </div>
+        </div>
+      </span>
+      <!-- 10 Max -->
+      <span ng-if="vm.game.seats.length==10">
+        <div class="row center-row">
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[0] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[1] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[2] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[3] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[4] }}</player>
+          </div>
+          <div class="col-4 offset-1 well">
+            <pokertable>{{ vm.game.table }}</pokertable>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[5] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[6] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[7] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[8] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[9] }}</player>
+          </div>
+        </div>
+      </span>
+      <!-- 11 Max -->
+      <span ng-if="vm.game.seats.length==11">
+        <div class="row center-row">
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[0] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[1] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[2] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[3] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[4] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[5] }}</player>
+          </div>
+          <div class="col-4 offset-1 well">
+            <pokertable>{{ vm.game.table }}</pokertable>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[6] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[7] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[8] }}</player>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[9] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[10] }}</player>
+          </div>
+        </div>
+      </span>
+      <!-- 12 Max -->
+      <span ng-if="vm.game.seats.length==12">
+        <div class="row center-row">
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[0] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[1] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[2] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[3] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[4] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 well">
+            <player>{{ vm.game.seat[5] }}</player>
+          </div>
+          <div class="col-4 offset-1 well">
+            <pokertable>{{ vm.game.table }}</pokertable>
+          </div>
+          <div class="col-2 offset-1 well">
+            <player>{{ vm.game.seat[6] }}</player>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[7] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[8] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[9] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[10] }}</player>
+          </div>
+          <div class="col-2 offset well">
+            <player>{{ vm.game.seat[11] }}</player>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
