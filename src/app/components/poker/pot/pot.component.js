@@ -13,14 +13,8 @@
     function Controller($stateParams, GameService) {
         var vm = this;
         vm.pot = {};
-        vm.getPot = getPot;
         vm.$onInit = () => {
-            vm.pot = getPot($stateParams.gameId);
+            vm.pot = {};
         };
-
-
-        function getPot(gameId) {
-            return GameService.getPot(gameId);
-        }
     }
 }());

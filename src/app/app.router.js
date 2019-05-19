@@ -17,8 +17,24 @@
                 component: 'home'
             })
             .state('dashboard', {
-                url: 'dashboard', 
+                url: '/dashboard', 
                 component: 'dashboard'
+            })
+            .state('login', {
+                url: '/login',
+                component: 'login'
+            })
+            .state('register', {
+                url: '/register',
+                component: 'register'
+            })
+            .state('game', {
+                url: '/game/:gameId',
+                component: 'game'
+            })
+            .state('account', {
+                url: '/account/:username',
+                component: 'account'
             });
     }
 })();

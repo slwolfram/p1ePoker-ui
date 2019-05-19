@@ -5,11 +5,8 @@
 
   function Service($http) {
     var service = {};
-    service.games = [];
     service.fetchGameDetails = fetchGameDetails;
     service.fetchGame = fetchGame;
-    service.getGame = getGame;
-    service.removeGame = removeGame;
     service.joinGame = joinGame;
     return service;
 

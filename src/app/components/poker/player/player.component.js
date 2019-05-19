@@ -2,36 +2,33 @@
     'use strict';
 
     angular
-        .module('appGame')
+        .module('app')
         .component('player', {
-            templateUrl: 'app/game/components/player/player.view.html',
+            templateUrl: 'app/components/poker/player/player.view.html',
             controller: Controller,
             controllerAs: 'vm',
             bindings: {
-                seatId: '@',
-                gameId: '<'
+                player: '=',
+                buyin: '='
             }
         });
 
 
-    function Controller(GameService) {
+    function Controller(GameService, AuthService, $localStorage) {
         var vm = this;
         vm.player = {};
         vm.joinGame = joinGame;
-        vm.getPlayer = getPlayer;
+        vm.loginState = AuthService.loginState;
+        console.log(vm.loginState)
         vm.$onInit = () => {
-            vm.player = getPlayer(vm.gameId, vm.seatId);
+            console.log(vm.player)
+            vm.bankroll = $localStorage.currentUser.bankroll;
         };
 
 
         function joinGame() {
             GameService.joinGame(vm.gameId, vm.seatId, function (result) {
             });
-        }
-
-
-        function getPlayer(gameId, seatId) {
-            return GameService.getPlayer(gameId, seatId);
         }
     }
 }());

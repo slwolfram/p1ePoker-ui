@@ -12,7 +12,8 @@
     vm.$onInit = () => {
       GameService.fetchGameDetails(function(result) {
         if (result) {
-          vm.gameDetails = result;
+          console.log(result);
+          vm.gameDetails = result.data;
         }
       });
     };

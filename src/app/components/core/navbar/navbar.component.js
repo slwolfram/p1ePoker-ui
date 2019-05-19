@@ -12,25 +12,16 @@
 
     function Controller($scope, AuthService) {
         var vm = this;
-        vm.checkLogin = checkLogin;
-        vm.loggedIn = false;
-        checkLogin();
+        vm.loginState = false;
+
+        vm.$onInit = () => {
+            vm.loginState = AuthService.loginState;
+        };
 
         $scope.$on('switchLoginStatus', function(event, obj) {
             console.log('navbar controller: switching login status');
-            vm.loggedIn = obj.state;
+            vm.loginState = obj.state;
         });
-
-
-        function checkLogin() {
-            AuthService.checkLogin(function(result) {
-                if (result === true) {
-                    vm.loggedIn = true;
-                } else {
-                    vm.loggedIn = false;
-                }
-            });
-        }
 
 
         function logout() {

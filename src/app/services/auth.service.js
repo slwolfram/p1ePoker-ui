@@ -7,7 +7,7 @@
     var service = {};
     service.login = login;
     service.logout = logout;
-    service.checkLogin = checkLogin;
+    service.loginState = isLoggedIn();
     return service;
 
     function login(username, password, callback) {
@@ -35,13 +35,22 @@
         .then(function(response) {
           console.log(response);
           console.log(response.data.token);
-          $localStorage.currentUser = {
-            user: response.data.user,
-            token: response.data.token
-          };
+          $localStorage.currentUser = (
+            {
+              "id" : response.data.user.GUID,
+              "username": response.data.user.Username,
+              "screenName": response.data.user.ScreenName,
+              "bankroll": response.data.user.Bankroll,
+              "createDttm": response.data.user.CreateDTTM,
+              "updateDttm": response.data.user.UpdateDTTM,
+              "token": response.data.token
+            }
+          );
+          service.loginState = true;
           callback(response);
         })
         .catch(function(error) {
+          service.loginState = false;
           console.log(error);
           callback(null);
         });
@@ -50,31 +59,14 @@
     function logout() {
       delete $localStorage.currentUser;
       $http.defaults.headers.common.Authorization = "";
+      service.loginState = false;
     }
 
-    function checkLogin(callback) {
+    function isLoggedIn() {
       console.log($localStorage.currentUser);
-      if (
-        $localStorage.currentUser === undefined ||
-        $localStorage.currentUser === null
-      ) {
-        return callback(false);
-      }
-      $http
-        .get("http://localhost:5000/api/auth/check-login", {
-          headers: {
-            Authentication: $localStorage.currentUser.token
-          }
-        })
-        .then(function(response) {
-          console.log("user is logged in!");
-          callback(true);
-        })
-        .catch(function(error) {
-          console.log("user is not logged in!");
-          $localStorage.currentUser = null;
-          callback(false);
-        });
+      if ($localStorage.currentUser)
+        return true;
+      return false;
     }
   }
 })();

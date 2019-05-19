@@ -6,21 +6,18 @@
         .component('pokertable', {
             templateUrl: 'app/components/poker/table/table.view.html',
             controller: Controller,
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            bindings: {
+                table: '='
+            }
         });
 
 
     function Controller($stateParams, GameService) {
         var vm = this;
         vm.table = {};
-        vm.getTable = getTable;
         vm.$onInit = () => {
-            vm.table = getTable($stateParams.gameId);
+            console.log(vm.table)
         };
-
-
-        function getTable(gameId) {
-            return GameService.getTable(gameId);
-        }
     }
 }());

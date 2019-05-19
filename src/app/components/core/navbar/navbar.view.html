@@ -9,25 +9,25 @@
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li ng-hide="vm.loggedIn" ng-click="">
+            <li ng-hide="vm.loginState" ng-click="">
                 <a href="#!/register">
                     <span class="glyphicon glyphicon-user"></span> 
                     Register
                 </a>
             </li>
-            <li ng-hide="vm.loggedIn" ng-click="">
+            <li ng-hide="vm.loginState" ng-click="">
                 <a href="#!/login">
                     <span class="glyphicon glyphicon-log-in"></span>
                     Login
                 </a>
             </li>
-            <li ng-show="vm.loggedIn" ng-click="">
+            <li ng-show="vm.loginState" ng-click="">
                 <a href="#">
                     <span class="glyphicon glyphicon-user"></span>
                     Account
                 </a>
             </li>
-            <li ng-show="vm.loggedIn" ng-click="">
+            <li ng-show="vm.loginState" ng-click="">
                 <a href="#!/login">
                     <span class="glyphicon glyphicon-log-out"></span>
                     Logout

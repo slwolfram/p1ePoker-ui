@@ -1,13 +1,71 @@
 html {
+    width: 100%;
 }
 
 .navbar {
 }
 
+.center-horizontal {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+.center-vertical {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.center-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 .center-row {
-    justify-content:center;
+    justify-content: center;
 }
 
 .player-div {
     margin: 5px;
+}
+
+.dashboard-view {
+    width: 800px;
+}
+
+.well {
+    padding: 0px;
+    margin: 0px;
+}
+
+.player {
+    font-size: 11px;
+    height: 150px;
+}
+
+.player-join-btn {
+    font-size: 12px;
+    margin: 5px;
+}
+
+.player-well {
+    padding-top: 5px;
+}
+
+.game-row {
+    width: 800px;
+}
+
+.game-container {
+    width: 800px;
+}
+
+.label-md {
+    font-size: 13px;
 }

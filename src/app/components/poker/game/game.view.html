@@ -1,21 +1,21 @@
 <div class="poker-table">
-  <div class="vertical-center">
-    <div class="container">
+  <div class="center-horizontal">
+    <div class="container game-container">
       <!-- Heads Up -->
       <span ng-if="vm.game.seats.length==2">
-        <div class="row center-row">
-          <div class="col-2 well">
-            <player>{{ vm.game.seat[0] }}</player>
+        <div class="row center-row game-row">
+          <div class="col-2 well player-well">
+            <player player="vm.game.seats[0]" buyin="vm.game.buyin"></player>
           </div>
         </div>
-        <div class="row center-row">
+        <div class="row center-row game-row">
           <div class="col-4 well">
-            <pokertable>{{ vm.game.table }}</pokertable>
+            <pokertable table="vm.game.table"></pokertable>
           </div>
         </div>
-        <div class="row center-row">
-          <div class="col-2 well">
-            <player>{{ vm.game.seat[1] }}</player>
+        <div class="row center-row game-row">
+          <div class="col-2 well player-well">
+            <player player="vm.game.seats[1]" buyin="vm.game.buyin"></player>
           </div>
         </div>
       </span>

@@ -1,9 +1,33 @@
 <div class="player">
-    <span ng-if="vm.player == null">
-        <p class="text-center"
-           such-href="/game/{{ vm.gameId }}/join/{{ vm.seatId }}">
-           Join Table
-        </p>
+    <span ng-if="!vm.player && vm.loginState">
+        <div class="text-center">
+            <row class="row center-row">
+                <div class="col-5 well">Min Buyin:</div>
+                <div class="col-3 well">{{ vm.buyin[0] | currency:undefined:0 }}</div>
+            </row>
+            <row class="row center-row">
+                <div class="col-5 well">Max Buyin:</div>
+                <div class="col-3 well">{{ vm.buyin[0] | currency:undefined:0 }}</div>
+            </row>
+            <hr style="margin:5px">
+            <row class="row center-row">
+                <div class="col-5 well">Bankroll:</div>
+                <div class="col-3 well">{{ vm.bankroll | currency:undefined:0 }}</div>
+            </row>
+            <hr style="margin:5px">
+            <row class="row center-row">
+                <div class="col-5 well">Buyin:</div>
+                <div class="col-3 well">
+                    <input type="text" class="buyin-input" style="width:30px;height:15px;">
+                </div>
+            </row>
+            <row class="row center-row">
+                <button class="btn player-join-btn">Join Game</button>
+            </row>
+        </div>
+    </span>
+    <span ng-if="!vm.player && !vm.loginState">
+        <div class="center-div label-md">Not Seated</div>
     </span>
     <span ng-if="vm.player">
         SEATED

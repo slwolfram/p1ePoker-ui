@@ -1,40 +1,40 @@
-<div class="container">
+<div class="dashboard-view container">
 <div class="col-md-12">
     <hr>
     <h2 class="text-center">Tables</h4>
     <hr>
     <table st-table="displayedGames" 
-           st-safe-src="vm.games" 
+           st-safe-src="vm.gameDetails" 
            class="table table-striped table-hover">
-        <thead class="text-center">
-        <tr>
-            <th>Name</th>
-            <th>Format</th>
-            <th>Seats</th>
-            <th>Blinds</th>
-            <th>Min-Buyin</th>
-            <th>Max-Buyin</th>
-        </tr>
-        <tr>
-            <th colspan="7"><input 
-                st-search=""
-                class="form-control" 
-                placeholder="global search ..." 
-                type="text"/>
-            </th>
-        </tr>
+        <thead>
+            <tr>
+                <th class="text-center">Name</th>
+                <th class="text-center">Format</th>
+                <th class="text-center">Seats</th>
+                <th class="text-center">Blinds</th>
+                <th class="text-center">Min-Buyin</th>
+                <th class="text-center">Max-Buyin</th>
+            </tr>
+            <tr>
+                <th colspan="7"><input 
+                    st-search=""
+                    class="form-control" 
+                    placeholder="global search ..." 
+                    type="text"/>
+                </th>
+            </tr>
         </thead>
         <tbody class="text-center">
-        <tr ng-repeat = "game in displayedGames | orderBy: 'Blinds[0]'" 
-            such-href="/game/{{ game.GUID }}" 
-            class='table-row'>
-            <td>{{ game.Name }}</td>
-            <td>{{ game.GameType }}</td>
-            <td>{{ game.Players.length + "/" + game.NumSeats }}</td>
-            <td>{{ game.Blinds[0] }}</td>
-            <td>{{ game.Buyin[0] | currency}}</td>
-            <td>{{ game.Buyin[1] | currency}}</td>
-        </tr>
+            <tr ng-repeat = "game in displayedGames | orderBy: 'Blinds[0]'" 
+                such-href="/game/{{ game.GUID }}" 
+                class='table-row'>
+                <td>{{ game.Name }}</td>
+                <td>{{ game.GameType }}</td>
+                <td>{{ game.NumPlayers + "/" + game.NumSeats }}</td>
+                <td>{{ (game.Blinds[0][0] | currency:undefined:0) + "/" + (game.Blinds[0][1] | currency:undefined:0)}}</td>
+                <td>{{ game.Buyin[0] | currency:undefined:0}}</td>
+                <td>{{ game.Buyin[1] | currency:undefined:0}}</td>
+            </tr>
         </tbody>
     </table>
 </div>

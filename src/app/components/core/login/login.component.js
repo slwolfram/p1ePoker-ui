@@ -10,7 +10,7 @@
         });
 
 
-    function Controller($location, $scope, LoginService) {
+    function Controller($location, $scope, AuthService) {
         var vm = this;
         vm.login = login;
         vm.logout = logout;
@@ -22,23 +22,20 @@
 
         function login() {
             vm.loading = true;
-            LoginService.login(vm.username, vm.password, function(result) {
+            AuthService.login(vm.username, vm.password, function(result) {
                 console.log(result);
-                if ('success' in result) {
+                if (result) {
                     $scope.$emit('loginChange', {"state": true});
                     $location.path('/');
                 } else {
-                    if (result.error === null)
-                        vm.error = "Couldn't access the server. Please try again later.";
-                    else
-                        vm.error = 'Invalid credentials.';
+                    vm.error = "Login failed"                    
                     vm.loading = false;
                 }
             });
         }
 
         function logout() {
-            LoginService.logout();
+            AuthService.logout();
             $scope.$emit('loginChange', {"state": false});
         }
     }
